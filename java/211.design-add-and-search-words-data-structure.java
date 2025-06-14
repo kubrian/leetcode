@@ -1,13 +1,11 @@
 class WordDictionary {
 
     private WordDictionary[] children;
-    private char val;
     private boolean isEnd;
 
     public WordDictionary() {
         children = new WordDictionary[26];
         isEnd = false;
-        val = ' ';
     }
 
     public void addWord(String word) {
@@ -17,7 +15,6 @@ class WordDictionary {
             if (curr.children[idx] == null) {
                 curr.children[idx] = new WordDictionary();
             }
-            curr.children[idx].val = c;
             curr = curr.children[idx];
         }
         curr.isEnd = true;
