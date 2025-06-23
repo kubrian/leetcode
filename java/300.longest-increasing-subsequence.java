@@ -8,7 +8,7 @@ class Solution {
         for (int x : nums) {
             int prevLIS = Arrays.binarySearch(endOfLIS, 0, bestLength, x);
             if (prevLIS < 0) {
-                prevLIS = -prevLIS - 1;
+                prevLIS = -prevLIS - 1; // insert position for not found keys
             }
             endOfLIS[prevLIS] = x;
             if (prevLIS == bestLength) {
